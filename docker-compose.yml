@@ -1,0 +1,30 @@
+version: "3.6"
+services:
+  app:
+    build:
+      context: ./app
+    volumes:
+      - ./app:/opt/app
+      - /opt/app/src/node_modules
+
+  django:
+    build:
+      context: ./django
+      dockerfile: ./Dockerfile
+    restart: on-failure
+    volumes:
+      - ./django:/opt/django/
+      - /static:/static
+      - /media:/media
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - /static:/static
+      - /media:/media
+    depends_on:
+      - django
+      - app
+
+volumes:
+  media:

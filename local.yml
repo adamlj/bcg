@@ -1,0 +1,30 @@
+version: "3.6"
+services:
+  django:
+    env_file:
+      - .local.env
+    depends_on:
+      - postgres
+  app:
+    ports:
+      - 3000:3000
+
+  nginx:
+    volumes:
+      - ./nginx.local.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+
+  postgres:
+    image: postgres:11.5
+    restart: always
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=cerveza
+      - POSTGRES_USER=cerveza
+      - POSTGRES_PASSWORD=cerveza
+
+

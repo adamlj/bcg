@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+
+# editors
+.vscode
+.idea
+
+# folders
+.next/
+dist/
+coverave/
+node_modules/
+volumes
+__pycache__/
+.docz/
+coverage/
+build/
+
+# files
+*.pyc
+
+# environment files
+*.env
+
+# logs
+*.log

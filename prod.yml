@@ -1,0 +1,25 @@
+version: "3.6"
+services:
+  django:
+    env_file:
+      - .prod.env
+
+  nginx:
+    volumes:
+      - ./nginx.prod.conf:/etc/nginx/nginx.conf
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: businesscrisis.guide, www.businesscrisis.guide
+      LETSENCRYPT_HOST: businesscrisis.guide, www.businesscrisis.guide
+      LETSENCRYPT_EMAIL: adam@bemaze.se
+
+  app:
+    environment:
+      - IS_PRODUCTION=true
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
