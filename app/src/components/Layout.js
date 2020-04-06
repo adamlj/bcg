@@ -36,10 +36,12 @@ const Layout = ({t, ...props}) => {
                         </Link>
                         <Dropdown item simple text={t('Language')}>
                             <Dropdown.Menu>
-                                <Dropdown.Item onClick={() => i18n.changeLanguage('sv')}><Flag
-                                    name="se"/>Svenska</Dropdown.Item>
-                                <Dropdown.Item onClick={() => i18n.changeLanguage('en')}><Flag
-                                    name="gb"/>English</Dropdown.Item>
+                                <Dropdown.Item onClick={() => i18n.changeLanguage('sv')}>
+                                    <Flag name="se"/> Svenska
+                                </Dropdown.Item>
+                                <Dropdown.Item onClick={() => i18n.changeLanguage('en')}>
+                                    <Flag name="gb"/> English
+                                </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Menu.Menu>

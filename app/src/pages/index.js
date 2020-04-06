@@ -1,22 +1,18 @@
 import Layout from '../components/Layout';
 
 import React from 'react'
-import {
-    Header,
-} from 'semantic-ui-react'
 import Head from "next/head";
-import Link from 'next/link';
 import { withTranslation } from '../i18n'
-import SwedenForm from '../components/form/se'
+import Start from '../components/Start'
 
 const Index = (props) => (
     <>
         <Head>
-            <title>Business Crisis Guide</title>
+            <title>{props.t('Business Crisis Guide')}</title>
         </Head>
 
         <Layout>
-            <SwedenForm t={props.t} />
+            <Start t={props.t} />
         </Layout>
     </>
 );

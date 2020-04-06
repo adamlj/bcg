@@ -1,7 +1,7 @@
 import React from 'react';
-import {Header} from 'semantic-ui-react'
-import Hero from '../../../public/svg/hero.svg'
-import colors from '../../Layout'
+import {Header, Button} from 'semantic-ui-react'
+import Hero from '../public/svg/hero.svg'
+import Link from 'next/link';
 
 export default function Start({data, handleChange, ...props}) {
     return (
@@ -15,6 +15,13 @@ export default function Start({data, handleChange, ...props}) {
                     {props.t('heroParagraph')}
                 </p>
             </div>
+
+            <div style={{textAlign: 'center', marginTop: '30px'}}>
+                <Link href='/help/[id]' as='/help/company'>
+                    <Button content={props.t('See what help you can get')} primary size="huge" type="submit"/>
+                </Link>
+            </div>
+
             <style jsx global>
                 {`
 

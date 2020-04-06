@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Accordion, Icon, Header, Form, Message, Grid} from 'semantic-ui-react'
-import http from "../../../utils/axios";
+import http from "../../utils/axios";
 import plans from "./plans"
-import colors from "../../../colors"
+import colors from "../../colors"
 
 export default function Result({data, handleChange, ...props}) {
     const [activeIndex, setActiveIndex] = useState(0);

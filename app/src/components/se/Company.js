@@ -1,7 +1,6 @@
 import React from 'react';
 import {Form} from 'semantic-ui-react'
 import BooleanRadio from "../BooleanRadio";
-import Cafe from '../../../public/svg/cafe.svg'
 
 export default function Company({data, handleChange, ...props}) {
     const companyOptions = [

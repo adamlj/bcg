@@ -1,5 +1,5 @@
 import React from "react";
-import colors from '../../colors';
+import colors from '../colors';
 import {Icon} from 'semantic-ui-react'
 
 export default function Steps(props) {

@@ -3,7 +3,7 @@ import {Form} from 'semantic-ui-react'
 import BooleanRadio from "../BooleanRadio";
 import {Slider} from "react-semantic-ui-range";
 import {Divider, Grid, Input} from "semantic-ui-react";
-import colors from "../../../colors"
+import colors from "../../colors"
 
 const SalarySlider = ({updateEmployee, ...props}) => {
     const [value, setValue] = useState(25000);
