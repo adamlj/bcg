@@ -17,10 +17,16 @@ function SjuklonAB() {
                 <li>Har anställda som fått lön, gäller även ägare själv eller familj</li>
             </ul>
             <Header as='h2'>Vad är det</Header>
-            <p>Under tiden 1 april 2020 till 31 maj 2020 så tar Försäkringskassan alla sjuklönekostnader. Detta gäller även ägare och familj, oavsett sjukdom.</p>
-            <p>Ägare och familj i mindre företag brukar sällan göra sjukanmälningar då det bara flyttar kostnader från företaget över till privatekonomi. Detta paket gör att 80% lön som vanligtvis betalas av företaget för sjukdag 2-14 kommer i efterhand att ersättas av Försäkringskassan.</p>
-            <p>Du bör som företagare under krisperioden använda sjukanmälan fullt ut vid sjukdom då det endast belastar företaget tillfälligt. Sjuklön betalas som vanligt av företaget till sjuk anställd men ersätts i efterhand av Försäkringskassan direkt till företaget.</p>
-            <p>Från den 27 mars är krav på läkarintyg ändrat från 8 dagar till 21 dagar och lämnas då till Försäkringsskassan.</p>
+            <p>Under tiden 1 april 2020 till 31 maj 2020 så tar Försäkringskassan alla sjuklönekostnader. Detta gäller
+                även ägare och familj, oavsett sjukdom.</p>
+            <p>Ägare och familj i mindre företag brukar sällan göra sjukanmälningar då det bara flyttar kostnader från
+                företaget över till privatekonomi. Detta paket gör att 80% lön som vanligtvis betalas av företaget för
+                sjukdag 2-14 kommer i efterhand att ersättas av Försäkringskassan.</p>
+            <p>Du bör som företagare under krisperioden använda sjukanmälan fullt ut vid sjukdom då det endast belastar
+                företaget tillfälligt. Sjuklön betalas som vanligt av företaget till sjuk anställd men ersätts i
+                efterhand av Försäkringskassan direkt till företaget.</p>
+            <p>Från den 27 mars är krav på läkarintyg ändrat från 8 dagar till 21 dagar och lämnas då till
+                Försäkringsskassan.</p>
 
             <Accordion styled fluid>
                 <Accordion.Title
@@ -53,8 +59,12 @@ function SjuklonAB() {
             <p>Ansvarig myndighet: Försäkringskassan</p>
 
             <Header as='h3'>Lagrum</Header>
-            <p><a href="https://www.regeringen.se/496683/contentassets/fc6e1722fd2d493baedfac2e460a906e/vissa-sjukpenningformaner-och-ersattning-till-arbetsgivare-for-kostnader-for-sjuklon.pdf">prop. 2019/20:132</a></p>
-            <p><a href="https://www.regeringen.se/remisser/2020/03/remiss-av-vissa-sjukpenningformaner-och-ersattning-till-arbetsgivare-for-kostnader-for-sjuklon/">Remissvar</a></p>
+            <p><a
+                href="https://www.regeringen.se/496683/contentassets/fc6e1722fd2d493baedfac2e460a906e/vissa-sjukpenningformaner-och-ersattning-till-arbetsgivare-for-kostnader-for-sjuklon.pdf">prop.
+                2019/20:132</a></p>
+            <p><a
+                href="https://www.regeringen.se/remisser/2020/03/remiss-av-vissa-sjukpenningformaner-och-ersattning-till-arbetsgivare-for-kostnader-for-sjuklon/">Remissvar</a>
+            </p>
         </>
     )
 }
@@ -168,7 +178,7 @@ function KarensAvdragAB() {
             <p>Ansvarig myndighet: Försäkringskassan</p>
             <Header as='h3'>Myndighetsinformation</Header>
             <p>
-                <a href="https://www.forsakringskassan.se/privatpers/coronaviruset-det-har-galler">Försäkringskassan</a><br />
+                <a href="https://www.forsakringskassan.se/privatpers/coronaviruset-det-har-galler">Försäkringskassan</a><br/>
                 <a href="https://www.regeringen.se/regeringens-politik/socialforsakringar/atgarder-inom-sjukforsakringen-med-anledning-av-corona/">Regeringen</a>
             </p>
             <Header as='h3'>Lagrum</Header>
@@ -178,6 +188,95 @@ function KarensAvdragAB() {
         </>
     )
 }
+
+function SanktArbetsgivaravgift() {
+    return (
+        <><p>Regeringen föreslår en tillfällig sänkning av arbetsgivaravgifter där du som arbetsgivare enbart kommer
+            betala ålderspensionsavgiften. Förslaget föreslås gälla för upp till 30 anställda och på den lön som inte
+            överstiger 25.000 kronor och för perioden 1 mars till den 30 juni 2020.</p><p>För enskilda näringsidkare
+            innebär förslaget att ingen annan avgift än ålderspensionsavgiften och två tredjedelar av de övriga
+            egenavgifterna och den allmänna löneavgiften ska betalas under 2020.</p><p>Förslagen föreslås vara
+            tillfälliga och ska träda i kraft den 6 april 2020.</p></>
+    )
+}
+
+function PrelSkatt() {
+    return (
+        <><p>Skatteverket vill påminna företagare om möjligheten att ändra debiterad preliminärskatt om företaget
+            drabbas ekonomiskt på grund av coronapandemin. Du kan ändra din debiterade preliminärskatt upp till sex
+            månader efter beskattningsårets utgång.</p></>
+    )
+}
+
+function AnstandMoms() {
+    return (
+        <><p>Företag som drabbas ekonomiskt av coronaviruset kan ansöka om tillfälligt anstånd med betalning av
+            arbetsgivaravgifter, avdragen skatt och moms. Betalningen kan skjutas upp i ett år från beslutsdatumet.
+            Anståndet gäller för upp till tre redovisningsperioder mellan januari och september 2020. Det finns flera
+            sätt att ansöka om tillfälligt anstånd, men du får beslutet snabbast om du använder tjänsten Ansök om
+            tillfälligt anstånd med skatteinbetalning som du öppnar i Mina sidor på skatteverket.se.</p>
+        </>
+    )
+}
+
+function BanklanBorgen() {
+    return (
+        <><p>Regeringen föreslår att företag som är livskraftiga, men som till följd av coronaviruset fått ekonomiska
+            svårigheter, ska få möjlighet till statlig lånegaranti. Lånegaranti innebär att staten garanterar 70 procent
+            av nya lån från bankerna till företagen. Varje företag förslås få låna max 75 miljoner kronor, med viss
+            reservation för att undantag kan göras.</p>
+        </>
+    )
+}
+
+function AlmiLan() {
+    return (
+        <><p>Bärkraftiga små och medelstora företag i Sverige som har finansieringsbehov till följd av coronavirusets
+            spridning, kan ansöka om Almis Brygglån. Lånet ger möjlighet till villkor som är särskilt anpassade till
+            rådande situation. Lånet kombineras alltid med rådgivning där du kan diskutera och simulera de effekter
+            coronakrisen har på ditt kassaflöde, resultat- och balansräkning.</p>
+        </>
+    )
+}
+
+function Korttidsarbete() {
+    return (
+        <><p>Korttidsarbete, tidigare kallat korttidspermittering, innebär att en anställd går ner i arbetstid och lön
+            istället för att du behöver säga upp personen. Det betyder att du kan minska den anställdas arbetstid och få
+            stöd från staten för att täcka stora delar av kostnaden.</p>
+            <p>Du kan söka stödet från och med 7 april 2020. Det kommer gälla retroaktivt från och med 16 mars 2020.</p>
+        </>
+    )
+}
+
+function KarensAvdragEF() {
+    return (
+        <><p>Regeringen har beslutat att tillfälligt slopa karensen från den 11 mars. Det innebär att du kan ansöka
+            retroaktivt om ersättning för karens från 11 mars och framåt. Arbetsgivaren ska göra karensavdrag som
+            vanligt.</p>
+        </>
+    )
+}
+
+function SjuklonEF() {
+    return (
+        <><p>Regeringen har beslutat att arbetsgivare får ersättning av staten för sjuklönekostnaden för april och maj.
+            Arbetsgivaren rapporterar in sina sjuklönekostnader i samband med arbetsgivardeklarationen. Ersättningen
+            sker i form av kreditering på skattekontot. </p>
+        </>
+    )
+}
+
+function SanktHyra() {
+    return (
+        <><p>För att hjälpa branscher som sällanköpshandel (t.ex kläder, leksaker och elektronik), hotell och restaurang
+            har regeringen förslagit att påskynda omförhandling av hyror. Förslaget är att staten står för 50 procent av
+            hyresnedsättningen och upp till 25 procent av den ursprungliga fasta hyran.</p>
+            <p>Stödet gäller från 1 april – 30 juni 2020 och kan sökas i efterhand.</p>
+        </>
+    )
+}
+
 
 /*
 isEligible have 4 levels:
@@ -202,9 +301,9 @@ const plans = [
     {
         isLoan: false,
         title: 'Korttidsarbete',
-        description: 'Beskrivning här',
+        description: <Korttidsarbete/>,
         isEligible: (data) => {
-            if (data.employees_outside_owners && data.employees_count >= 1 && !data.dividend && !data.insolvent == false) {
+            if (data.employees_count >= 1 && !data.dividend && !data.insolvent) {
                 return 1;
             } else if (data.employees_outside_owners && data.employees_count >= 1 && data.dividend && !data.insolvent) {
                 return 2;
@@ -230,7 +329,7 @@ const plans = [
     {
         isLoan: false,
         title: 'Karensavdrag',
-        description: 'Beskrivning här',
+        description: <KarensAvdragEF/>,
         isEligible: (data) => {
             if (data.company_type == 'ef' && data.employees_count >= 1) {
                 return 1;
@@ -244,7 +343,7 @@ const plans = [
     {
         isLoan: false,
         title: 'Sjuklön',
-        description: 'Beskrivning här',
+        description: <SjuklonEF/>,
         isEligible: (data) => {
             if (data.company_type == 'ef' && data.employees_count >= 1) {
                 return 1;
@@ -258,7 +357,7 @@ const plans = [
     {
         isLoan: false,
         title: 'Sjuklön',
-        description: <SjuklonAB />,
+        description: <SjuklonAB/>,
         isEligible: (data) => {
             if (data.company_type == 'ef') {
                 return 4;
@@ -272,7 +371,7 @@ const plans = [
     {
         isLoan: false,
         title: 'Sänkt hyra',
-        description: 'Beskrivning här',
+        description: <SanktHyra/>,
         isEligible: (data) => {
             if (data.exposed_business && data.is_renter) {
                 return 1;
@@ -284,7 +383,7 @@ const plans = [
     {
         isLoan: false,
         title: 'Sänkt arbetsgivaravgift',
-        description: 'Beskrivning här',
+        description: <SanktArbetsgivaravgift/>,
         isEligible: (data) => {
             if (data.company_type == 'ef') {
                 return 4;
@@ -298,7 +397,7 @@ const plans = [
     {
         isLoan: false,
         title: 'Sänkt Egenavgift',
-        description: 'Beskrivning här',
+        description: <SanktArbetsgivaravgift/>,
         isEligible: (data) => {
             if (data.company_type == 'ef') {
                 return 1;
@@ -310,7 +409,7 @@ const plans = [
     {
         isLoan: true,
         title: 'Anstånd arbetsgivaravgift och inkomstskatt',
-        description: 'Beskrivning här',
+        description: <AnstandMoms/>,
         isEligible: (data) => {
             if (data.employees_count >= 1 && data.employees_outside_owners) {
                 return 1;
@@ -322,7 +421,7 @@ const plans = [
     {
         isLoan: true,
         title: 'Lån från Almi',
-        description: 'Beskrivning här',
+        description: <AlmiLan/>,
         isEligible: (data) => {
             return 2;
         }
@@ -330,7 +429,7 @@ const plans = [
     {
         isLoan: true,
         title: 'Banklån med statlig borgen',
-        description: 'Beskrivning här',
+        description: <BanklanBorgen/>,
         isEligible: (data) => {
             return 2;
         }
@@ -338,7 +437,7 @@ const plans = [
     {
         isLoan: true,
         title: 'Preliminärskatt 2019 och 2020',
-        description: 'Beskrivning här',
+        description: <PrelSkatt/>,
         isEligible: (data) => {
             return 1;
         }
@@ -346,7 +445,7 @@ const plans = [
     {
         isLoan: true,
         title: 'Anstånd moms',
-        description: 'Beskrivning här',
+        description: <AnstandMoms/>,
         isEligible: (data) => {
             if (data.company_type == 'ef') {
                 return 1;
