@@ -14,12 +14,26 @@ export default function Result({data, handleChange, ...props}) {
         setActiveIndex(newIndex)
     };
 
+    const calculateSavings = () => {
+        let savings = 0;
+        if (data.employees_count > 0) {
+            data.employees.map((employee, index) => {
+                savings += employee.salary * 0.5;
+            })
+        }
+
+        if (data.monthly_rent && data.exposed_business) {
+            savings += data.monthly_rent * 0.5;
+        }
+
+        return savings;
+    };
+
     const save = () => {
         if (data.email && data.email.length) {
             const email = data.email;
             delete data.email;
 
-            console.log(data);
             http.post('/api/business/', {
                 email: email,
                 details: data
@@ -31,10 +45,18 @@ export default function Result({data, handleChange, ...props}) {
 
     return (
         <>
+
             <div className="heading">
-                <Header>{props.t('Spara upp till')}</Header>
-                <Header className="savings">34 500 <span>SEK</span></Header>
-                <p>genom att följa stegen nedan</p>
+                {calculateSavings() > 0 ?
+                    <>
+                        <Header>{props.t('Spara upp till')}</Header>
+                        <Header className="savings">{calculateSavings()} <span>SEK/månad</span></Header>
+                        <p>genom att följa stegen nedan</p>
+                    </>
+                    :
+                    <Header>{props.t('Se vilken hjälp du kan få')}</Header>
+                }
+
             </div>
             <Message positive>
                 {!saved &&
@@ -87,7 +109,7 @@ export default function Result({data, handleChange, ...props}) {
                 return (
                     <React.Fragment key={`accordion-${parentIndex}`}>
                         <Header as='h2'><Icon name={support.icon} color={support.iconColor}/> {support.title}</Header>
-                        <Accordion style={{marginBottom:"50px"}}>
+                        <Accordion style={{marginBottom: "50px"}}>
                             {
                                 plans.filter(function (plan) {
                                     return plan.isEligible(data) == support.eligibleKey;
