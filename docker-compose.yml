@@ -21,6 +21,7 @@ services:
     image: nginx:latest
     volumes:
       - /static:/static
+      - ./app/src/public/images:/static/images
       - /media:/media
     depends_on:
       - django
