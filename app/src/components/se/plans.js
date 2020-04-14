@@ -277,6 +277,14 @@ function SanktHyra() {
     )
 }
 
+function StartaEgetBidrag() {
+    return (
+        <>
+            <p>Förlängt Starta eget Bidrag.</p>
+        </>
+    )
+}
+
 
 /*
 isEligible have 4 levels:
@@ -296,6 +304,9 @@ exposed_business: true/false,
 is_renter: true/false,
 insolvent: true/false,
 employees_outside_owners: null,
+company_received_seb: true/false,
+company_age_months: true/false,
+company_is_old: true/false,
 */
 const plans = [
     {
@@ -303,10 +314,12 @@ const plans = [
         title: 'Korttidsarbete',
         description: <Korttidsarbete/>,
         isEligible: (data) => {
-            if (data.employees_count >= 1 && !data.dividend && !data.insolvent) {
+            if (data.company_type == 'ab' && data.employees_count >= 1 && !data.dividend && !data.insolvent) {
                 return 1;
-            } else if (data.employees_outside_owners && data.employees_count >= 1 && data.dividend && !data.insolvent) {
+            } else if (data.company_type == 'ab' && data.employees_count >= 1 && data.dividend && !data.insolvent) {
                 return 2;
+            } else if (data.company_type == 'ef' && data.employees_outside_owners && data.employees_count >= 1 && !data.insolvent) {
+                return 1;
             } else {
                 return 3;
             }
@@ -411,7 +424,11 @@ const plans = [
         title: 'Anstånd arbetsgivaravgift och inkomstskatt',
         description: <AnstandMoms/>,
         isEligible: (data) => {
-            if (data.employees_count >= 1 && data.employees_outside_owners) {
+            if (data.company_type == 'ab' && data.employees_count >= 1 && !data.dividend && !data.insolvent) {
+                return 1;
+            } else if (data.company_type == 'ab' && data.employees_count >= 1 && data.dividend && !data.insolvent) {
+                return 2;
+            } else if (data.company_type == 'ef' && data.employees_outside_owners && data.employees_count >= 1 && !data.insolvent) {
                 return 1;
             } else {
                 return 3;
@@ -423,7 +440,11 @@ const plans = [
         title: 'Lån från Almi',
         description: <AlmiLan/>,
         isEligible: (data) => {
-            return 2;
+            if (!data.insolvent) {
+                return 2;
+            } else {
+                return 3;
+            }
         }
     },
     {
@@ -431,7 +452,11 @@ const plans = [
         title: 'Banklån med statlig borgen',
         description: <BanklanBorgen/>,
         isEligible: (data) => {
-            return 2;
+            if (!data.insolvent) {
+                return 2;
+            } else {
+                return 3;
+            }
         }
     },
     {
@@ -439,7 +464,11 @@ const plans = [
         title: 'Preliminärskatt 2019 och 2020',
         description: <PrelSkatt/>,
         isEligible: (data) => {
-            return 1;
+            if (!data.insolvent) {
+                return 1;
+            } else {
+                return 3;
+            }
         }
     },
     {
@@ -447,12 +476,27 @@ const plans = [
         title: 'Anstånd moms',
         description: <AnstandMoms/>,
         isEligible: (data) => {
-            if (data.company_type == 'ef') {
+            if (!data.insolvent && data.company_type == 'ef') {
+                return 2;
+            } else if (!data.insolvent) {
                 return 1;
             } else {
-                return 4;
+                return 3;
             }
         }
+    },
+    {
+        isLoan: false,
+        title: 'Förlängt starta eget bidrag',
+        description: <StartaEgetBidrag/>,
+        isEligible: (data) => {
+            if (data.company_received_seb) {
+                return 1;
+            } else {
+                return 3;
+            }
+        }
+
     }
 ];
 
