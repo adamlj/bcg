@@ -1,261 +1,547 @@
 import React, {useState} from "react";
 import {Accordion, Icon, Header, List, Table} from 'semantic-ui-react'
 
-function SjuklonAB() {
-    const [activeIndex, setActiveIndex] = useState(-1);
-
-    const handleClick = (e, titleProps) => {
-        const {index} = titleProps;
-        const newIndex = activeIndex === index ? -1 : index;
-        setActiveIndex(newIndex)
-    };
-    return (
-        <>
-            <Header as='h2'>Gäller dig</Header>
-            <ul>
-                <li>Bedriver Aktiebolag eller Handelsbolag</li>
-                <li>Har anställda som fått lön, gäller även ägare själv eller familj</li>
-            </ul>
-            <Header as='h2'>Vad är det</Header>
-            <p>Under tiden 1 april 2020 till 31 maj 2020 så tar Försäkringskassan alla sjuklönekostnader. Detta gäller
-                även ägare och familj, oavsett sjukdom.</p>
-            <p>Ägare och familj i mindre företag brukar sällan göra sjukanmälningar då det bara flyttar kostnader från
-                företaget över till privatekonomi. Detta paket gör att 80% lön som vanligtvis betalas av företaget för
-                sjukdag 2-14 kommer i efterhand att ersättas av Försäkringskassan.</p>
-            <p>Du bör som företagare under krisperioden använda sjukanmälan fullt ut vid sjukdom då det endast belastar
-                företaget tillfälligt. Sjuklön betalas som vanligt av företaget till sjuk anställd men ersätts i
-                efterhand av Försäkringskassan direkt till företaget.</p>
-            <p>Från den 27 mars är krav på läkarintyg ändrat från 8 dagar till 21 dagar och lämnas då till
-                Försäkringsskassan.</p>
-
-            <Accordion styled fluid>
-                <Accordion.Title
-                    active={activeIndex === 0}
-                    index={0}
-                    onClick={handleClick}
-                >
-                    <Icon name='dropdown'/>
-                    Läs mer & hur du räknar
-                </Accordion.Title>
-                <Accordion.Content active={activeIndex === 0}>
-
-                </Accordion.Content>
-            </Accordion>
-
-
-            <Header as='h2'>Detta ska du göra</Header>
-
-            <Header as='h3'>Företaget</Header>
-            <p>Detta behöver företaget göra för att få ersättning:</p>
-            <ol>
-                <li>Anmäl sjuklön som vanligt till Skatteverket</li>
-                <li>Ersättning sker genom Skattekontot, tidsuppskattning saknas</li>
-            </ol>
-
-            <Header as='h3'>Den anställde</Header>
-            <p>Som anställd behöver du inte göra något.</p>
-
-            <Header as='h2'>Ansvarig myndighet och lagrum</Header>
-            <p>Ansvarig myndighet: Försäkringskassan</p>
-
-            <Header as='h3'>Lagrum</Header>
-            <p><a
-                href="https://www.regeringen.se/496683/contentassets/fc6e1722fd2d493baedfac2e460a906e/vissa-sjukpenningformaner-och-ersattning-till-arbetsgivare-for-kostnader-for-sjuklon.pdf">prop.
-                2019/20:132</a></p>
-            <p><a
-                href="https://www.regeringen.se/remisser/2020/03/remiss-av-vissa-sjukpenningformaner-och-ersattning-till-arbetsgivare-for-kostnader-for-sjuklon/">Remissvar</a>
-            </p>
-        </>
-    )
-}
-
-
-function KarensAvdragAB() {
-    const [activeIndex, setActiveIndex] = useState(-1);
-
-    const handleClick = (e, titleProps) => {
-        const {index} = titleProps;
-        const newIndex = activeIndex === index ? -1 : index;
-        setActiveIndex(newIndex)
-    };
-    return (
-        <>
-            <Header as='h2'>Gäller dig</Header>
-            <ul>
-                <li>Bedriver Aktiebolag eller Handelsbolag</li>
-                <li>Har anställda som fått lön, gäller även ägare själv eller familj</li>
-            </ul>
-            <Header as='h2'>Vad är det</Header>
-            <p>Under tiden 11 mars 2020 till 31 maj 2020 så är karensavdraget slopad för alla anställda oavsett
-                anledning man är sjuk. Företaget betalar ingenting och den anställda söker ersättning om 700 kr från
-                Försäkringskassan för varje första sjukdag inom denna period. Detta gäller även ägare och familj.</p>
-            <p>Ägare och familj i mindre företag brukar sällan göra sjukanmälningar då det bara flyttar kostnader från
-                företaget över till privatekonomi.</p>
-            <p>Du bör som företagare under krisperioden använda karensavdraget fullt ut vid sjukdom då det inte belastar
-                företaget men ger ersättning privat.</p>
-
-            <Accordion styled fluid>
-                <Accordion.Title
-                    active={activeIndex === 0}
-                    index={0}
-                    onClick={handleClick}
-                >
-                    <Icon name='dropdown'/>
-                    Läs mer & hur du räknar
-                </Accordion.Title>
-                <Accordion.Content active={activeIndex === 0}>
-                    <p>700kr i ersättning är en schablon som ges oavsett lön och kan sägas motsvara en månadslön innan
-                        skatt om ca. 27.000kr med 80% sjuklön.</p>
-                    <p>Den tidigare så kallade karensdagen innebär att den första sjukdagen i en sjukperiod inte är
-                        betalt. Sedan 2019 1 januari så har det bytt namn till karensavdrag och motsvarar då att du inte
-                        får betalt den första 1/5 av din normala veckolön, ett mer rättvist system för de som jobbar
-                        olika mycket olika dagar.</p>
-                    <p>En ny sjukperiod och nytt karensavdrag uppstår när man varit frisk fem dagar efter sin första
-                        jobbdag. Detta är inget annorlunda än normalt men det som i vanliga fall drabbar den anställda
-                        extra hårt kan nu istället lindras.</p>
-                    <p>Exempel nedan för det minsta möjliga antalet friska dagar innan nytt karensavdrag och möjlighet
-                        till 700kr schablonersättning till den anställda kan ges.</p>
-
-                    <Table celled>
-                        <Table.Body>
-                            <Table.Row>
-                                <Table.Cell>11 mars</Table.Cell>
-                                <Table.Cell>Sjuk, karensavdrag</Table.Cell>
-                            </Table.Row>
-                            <Table.Row>
-                                <Table.Cell>12 mars</Table.Cell>
-                                <Table.Cell>Jobbar</Table.Cell>
-                            </Table.Row>
-                            <Table.Row>
-                                <Table.Cell>13 mars</Table.Cell>
-                                <Table.Cell>Jobbar</Table.Cell>
-                            </Table.Row>
-                            <Table.Row>
-                                <Table.Cell>14 mars</Table.Cell>
-                                <Table.Cell>Helg</Table.Cell>
-                            </Table.Row>
-                            <Table.Row>
-                                <Table.Cell>15 mars</Table.Cell>
-                                <Table.Cell>Helg</Table.Cell>
-                            </Table.Row>
-                            <Table.Row>
-                                <Table.Cell>16 mars</Table.Cell>
-                                <Table.Cell>Jobbar</Table.Cell>
-                            </Table.Row>
-                            <Table.Row>
-                                <Table.Cell>17 mars</Table.Cell>
-                                <Table.Cell>Jobbar</Table.Cell>
-                            </Table.Row>
-                            <Table.Row>
-                                <Table.Cell>18 mars</Table.Cell>
-                                <Table.Cell>Sjuk, karensavdrag</Table.Cell>
-                            </Table.Row>
-                        </Table.Body>
-                    </Table>
-                    <p>Skulle samma mönster fortsätta under hela undantagsperioden så får vi fram det maximala
-                        teoretiska stödet om totalt 12 karensavdrag, ca 40% av total månadskostnad för anställd.
-                        Företaget får sänkt lönekostnad motsvarande 12 dagars lön och den anställde söker ersättning om
-                        8400 kr (12 x 700kr).</p>
-                </Accordion.Content>
-            </Accordion>
-
-
-            <Header as='h2'>Detta ska du göra</Header>
-
-            <Header as='h3'>Företaget</Header>
-            <p>Företaget gör ingenting utöver det normala, karensavdrag som normalt för första sjukdagen i varje
-                sjukperiod.</p>
-            <Header as='h3'>Den anställde</Header>
-            <p>Har du fått karensavdrag under 11 mars 2020 till 31 maj 2020 så gör du följande för att få 700kr per
-                sjukdag:</p>
-            <ol>
-                <li>Ansökan öppnar 7 april 2020</li>
-                <li>Logga in Mina Sidor på <a href="https://www.forsakringskassan.se/">Försäkringskassan</a></li>
-                <li>Anmäl vilka dagar du fått karensavdrag</li>
-                <li>Ersättning betalas ut inom 3-5 arbetsdagar</li>
-            </ol>
-            <Header as='h2'>Ansvarig myndighet och lagrum</Header>
-            <p>Ansvarig myndighet: Försäkringskassan</p>
-            <Header as='h3'>Myndighetsinformation</Header>
-            <p>
-                <a href="https://www.forsakringskassan.se/privatpers/coronaviruset-det-har-galler">Försäkringskassan</a><br/>
-                <a href="https://www.regeringen.se/regeringens-politik/socialforsakringar/atgarder-inom-sjukforsakringen-med-anledning-av-corona/">Regeringen</a>
-            </p>
-            <Header as='h3'>Lagrum</Header>
-            <p><a href="https://data.riksdagen.se/fil/A22AC29A-E1C4-48FE-81B5-90019CC37A5F">Finansutskottets betänkande
-                2019/20:FiU5</a></p>
-
-        </>
-    )
-}
-
-function SanktArbetsgivaravgift() {
-    return (
-        <><p>Regeringen föreslår en tillfällig sänkning av arbetsgivaravgifter där du som arbetsgivare enbart kommer
-            betala ålderspensionsavgiften. Förslaget föreslås gälla för upp till 30 anställda och på den lön som inte
-            överstiger 25.000 kronor och för perioden 1 mars till den 30 juni 2020.</p><p>För enskilda näringsidkare
-            innebär förslaget att ingen annan avgift än ålderspensionsavgiften och två tredjedelar av de övriga
-            egenavgifterna och den allmänna löneavgiften ska betalas under 2020.</p><p>Förslagen föreslås vara
-            tillfälliga och ska träda i kraft den 6 april 2020.</p></>
-    )
-}
-
-function PrelSkatt() {
-    return (
-        <><p>Skatteverket vill påminna företagare om möjligheten att ändra debiterad preliminärskatt om företaget
-            drabbas ekonomiskt på grund av coronapandemin. Du kan ändra din debiterade preliminärskatt upp till sex
-            månader efter beskattningsårets utgång.</p></>
-    )
-}
-
-function AnstandMoms() {
-    return (
-        <><p>Företag som drabbas ekonomiskt av coronaviruset kan ansöka om tillfälligt anstånd med betalning av
-            arbetsgivaravgifter, avdragen skatt och moms. Betalningen kan skjutas upp i ett år från beslutsdatumet.
-            Anståndet gäller för upp till tre redovisningsperioder mellan januari och september 2020. Det finns flera
-            sätt att ansöka om tillfälligt anstånd, men du får beslutet snabbast om du använder tjänsten Ansök om
-            tillfälligt anstånd med skatteinbetalning som du öppnar i Mina sidor på skatteverket.se.</p>
-        </>
-    )
-}
-
-function BanklanBorgen() {
-    return (
-        <><p>Regeringen föreslår att företag som är livskraftiga, men som till följd av coronaviruset fått ekonomiska
-            svårigheter, ska få möjlighet till statlig lånegaranti. Lånegaranti innebär att staten garanterar 70 procent
-            av nya lån från bankerna till företagen. Varje företag förslås få låna max 75 miljoner kronor, med viss
-            reservation för att undantag kan göras.</p>
-        </>
-    )
-}
-
-function AlmiLan() {
-    return (
-        <><p>Bärkraftiga små och medelstora företag i Sverige som har finansieringsbehov till följd av coronavirusets
-            spridning, kan ansöka om Almis Brygglån. Lånet ger möjlighet till villkor som är särskilt anpassade till
-            rådande situation. Lånet kombineras alltid med rådgivning där du kan diskutera och simulera de effekter
-            coronakrisen har på ditt kassaflöde, resultat- och balansräkning.</p>
-        </>
-    )
-}
 
 function Korttidsarbete() {
     return (
-        <><p>Korttidsarbete, tidigare kallat korttidspermittering, innebär att en anställd går ner i arbetstid och lön
-            istället för att du behöver säga upp personen. Det betyder att du kan minska den anställdas arbetstid och få
-            stöd från staten för att täcka stora delar av kostnaden.</p>
-            <p>Du kan söka stödet från och med 7 april 2020. Det kommer gälla retroaktivt från och med 16 mars 2020.</p>
+        <>
+            <p>Från och med den 16 mars 2020 och tills vidare så kan anställda gå ner i arbetstid med 20%, 40% eller
+                60%. Detta utökas (lagförslag) med även möjlighet om 80% under månaderna maj, juni och juli.</p>
+            <p>Medan den anställda endast förlorar 4-12% av sin lön så är kostnadsbesparingen för företaget 19-72%. </p>
+            <p>Stödet gäller i max sex kalendermånader, med möjlighet till förlängning i ytterligare tre
+                kalendermånader.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+
+            <p>En hel del krav är kopplat till att kunna använda sig av korttidsarbete, detta kan ses i sin helhet hos
+                Tillväxtverket under rubriken <strong>Ansvarig myndighet och officiella källor.</strong> Nedan är i
+                korthet de vanligaste och viktigaste punkterna.</p>
+            <p>För att vara berättigad så måste verksamheten fått tillfälliga och allvarliga ekonomiska svårigheter som
+                varit utanför företagets kontroll, t.ex. Covid-19 utbrottet. Företaget får inte heller vara under
+                rekonstruktion eller upprättat kontrollbalansräkning.</p>
+            <p>Likaså måste företaget först ha tagit andra åtgärder för att sänka arbetskraftskostnader, främst genom
+                att avsluta uppdrag för konsulter eller säga upp tim- och provanställda. Verksamhetskritisk arbetskraft
+                är undantagen och kan alltså behållas ändå.</p>
+            <p>För arbetsgivare med kollektivavtal så måste man kontrollera sin specifika situation. För arbetsgivare
+                utan kollektivavtal så signeras ett avtal med minst 70% av personalen inom den driftenhet som ska
+                permitteras – du kan ladda ner ett sådan avtal här. Samtliga anställda permitteras på samma nivå.
+                En driftsenhet är en geografisk plats. T.ex. all personal inom en och samma byggnad eller olika
+                byggnader på samma inhägnade område.</p>
+
+            <Table celled>
+                <Table.Header>
+                    <Table.Row>
+                        <Table.HeaderCell>Nivå</Table.HeaderCell>
+                        <Table.HeaderCell>Arbetstids­minskning</Table.HeaderCell>
+                        <Table.HeaderCell>Löne-minskning</Table.HeaderCell>
+                        <Table.HeaderCell>Arbetsgivarens minskade lönekostnad</Table.HeaderCell>
+                    </Table.Row>
+                </Table.Header>
+
+
+                <Table.Body>
+                    <Table.Row>
+                        <Table.Cell>1</Table.Cell>
+                        <Table.Cell>20</Table.Cell>
+                        <Table.Cell>4%</Table.Cell>
+                        <Table.Cell>19 %</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                        <Table.Cell>2</Table.Cell>
+                        <Table.Cell>40</Table.Cell>
+                        <Table.Cell>6%</Table.Cell>
+                        <Table.Cell>36 %</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                        <Table.Cell>3</Table.Cell>
+                        <Table.Cell>60</Table.Cell>
+                        <Table.Cell>7,5%</Table.Cell>
+                        <Table.Cell>53 %</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                        <Table.Cell>4 endast maj-juli</Table.Cell>
+                        <Table.Cell>80</Table.Cell>
+                        <Table.Cell>12%</Table.Cell>
+                        <Table.Cell>72%</Table.Cell>
+                    </Table.Row>
+                </Table.Body>
+            </Table>
+
+
+            <Header as='h2'>Så gör du - som arbetsgivare</Header>
+            <ol>
+                <li>Kontrollera med kollektivavtal att korttidsarbete är lämpligt</li>
+                <li>Skriv avtal med minst 70% av de anställda.</li>
+                <li>Betala ut lön som vanligt till anställda med avdrag på 4-12% (enligt tabellen ovan)</li>
+                <li>Gå till https://korttidsarbete.minansokan.se/#/ och följ instruktionerna. Excelfilen är viktig att
+                    fylla i korrekt då den måste bifogas i ansökan (inte bara beräkningshjälp som felaktigt anges på
+                    sidan)
+                </li>
+                <li>Besked och utbetalning sker normalt inom 3-5 arbetsdagar</li>
+            </ol>
+            <Header as='h2'>Så gör du - som anställd</Header>
+            <p>Som anställd behöver du inte göra något, avdrag om 4-12% på lönen görs på lönen av arbetsgivaren.</p>
+
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet: Tillväxtverket</p>
+            <p>
+                <a href="https://tillvaxtverket.se/om-tillvaxtverket/information-och-stod-kring-coronakrisen/korttidsarbete.html">Tillväxtverket</a>
+            </p>
+            <p>
+                <a href="https://www.regeringen.se/artiklar/2020/03/om-forslaget-korttidspermittering/">Regeringen</a>
+            </p>
+        </>)
+}
+
+function KarensAvdragAB() {
+    return (
+        <>
+            <p>Under tiden 11 mars 2020 till 31 maj 2020 så är karensavdraget slopad för alla anställda oavsett
+                anledning man är sjuk. Företaget betalar ingenting och den anställda söker ersättning om 700 kr från
+                Försäkringskassan för varje första sjukdag inom denna period. Detta gäller även ägare och familj.</p>
+            <p>Ägare och familj i mindre företag brukar sällan anmäla sjukdom då karensavdrag som minskar
+                företagskostnaden ger lika stort (efter skatter) bortfall i privatekonomin.</p>
+            <p>Du bör som småföretagare under krisperioden använda karensavdraget fullt ut vid sjukdom då det inte
+                belastar företaget men ger ersättning privat.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+            <p>700kr i ersättning är en schablon som ges oavsett lön och kan sägas motsvara en månadslön innan skatt om
+                ca. 27.000kr med 80% sjuklön</p>
+            <p>Den tidigare så kallade karensdagen innebär att den första sjukdagen i en sjukperiod inte är betalt.
+                Sedan 2019 1 januari så har det bytt namn till karensavdrag och motsvarar då att du inte får betalt den
+                första 1/5 av din normala veckolön, ett mer rättvist system för de som jobbar olika mycket olika
+                dagar. </p>
+            <p>En ny sjukperiod och nytt karensavdrag uppstår när man varit frisk fem dagar efter sin första jobbdag.
+                Detta är inget annorlunda än normalt men det som i vanliga fall drabbar den anställda extra hårt kan nu
+                istället lindras</p>
+            <p>Exempel nedan för det minsta möjliga antalet friska dagar innan nytt karensavdrag och möjlighet till
+                700kr schablonersättning till den anställda kan ges.</p>
+            <Header as='h2'>Så gör du - som arbetsgivare</Header>
+            <p>Inget, karensavdrag (tidigare kallat karensdag) dras av som normalt.</p>
+            <Header as='h2'>Så gör du - som anställd</Header>
+            <p>Anmälan görs till Försäkringskassan retroaktivt. Varje karensdag måste anmälas separat enligt nedan.</p>
+            <ul>
+                <li>Gå till <a href="https://www.forsakringskassan.se/">Försäkringskassan</a></li>
+                <li>Logga in som privatperson</li>
+                <li>Välj "Ansök om ersättning för karens"</li>
+                <li>Fyll i att du är anställd, vilken dag det gäller, uppgifter till din arbetsgivare och bankkonto för
+                    utbetalning
+                </li>
+                <li>Beslut och utbetalning görs normal inom 3-5 arbetsdagar</li>
+            </ul>
+
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet: Försäkringskassan</p>
+            <p><a
+                href="https://www.forsakringskassan.se/privatpers/coronaviruset-det-har-galler">Försäkringskassan</a>
+            </p>
+            <p><a
+                href="https://www.regeringen.se/regeringens-politik/socialforsakringar/atgarder-inom-sjukforsakringen-med-anledning-av-corona/">Regeringen</a>
+            </p>
         </>
     )
 }
 
 function KarensAvdragEF() {
     return (
-        <><p>Regeringen har beslutat att tillfälligt slopa karensen från den 11 mars. Det innebär att du kan ansöka
-            retroaktivt om ersättning för karens från 11 mars och framåt. Arbetsgivaren ska göra karensavdrag som
-            vanligt.</p>
+        <>
+            <p>Under tiden 11 mars 2020 till 31 maj 2020 så är karensavdraget slopad för enskild firma oavsett anledning
+                man är sjuk. Schablonersättning görs om 804kr före skatt de första 14 dagarna. Detta gäller utan hänsyn
+                till vad din ”normala” lön skulle vara och hur många karensdagar din firma har valt.</p>
+            <p>De som driver enskild firma brukar sällan anmäla sjukdom då det ofta är många karensdagar (normalt 7
+                dagar men kan vara upp till 90 dagar).</p>
+            <p>Du bör som småföretagare under krisperioden använda karensavdraget fullt ut vid sjukdom då det inte
+                belastar firma men ger ersättning privat från första dagen.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+            <p>Anmälan görs till Försäkringskassan retroaktivt.</p>
+            <ul>
+                <li>Gå till <a href="https://www.forsakringskassan.se/">Försäkringskassan</a></li>
+                <li>Logga in som privatperson</li>
+                <li>Välj "Ansök om ersättning för karens"</li>
+                <li>Fyll i att du är anställd, vilken dag det gäller, uppgifter till din arbetsgivare och bankkonto för
+                    utbetalning
+                </li>
+                <li>Beslut och utbetalning görs normal inom 3-5 arbetsdagar</li>
+            </ul>
+
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet: Försäkringskassan</p>
+            <p><a
+                href="https://www.forsakringskassan.se/privatpers/coronaviruset-det-har-galler">Försäkringskassan</a>
+            </p>
+            <p><a
+                href="https://www.regeringen.se/regeringens-politik/socialforsakringar/atgarder-inom-sjukforsakringen-med-anledning-av-corona/">Regeringen</a>
+            </p>
+        </>
+
+
+    )
+}
+
+
+function SjuklonAB() {
+    return (
+        <>
+            <p>Under tiden 1 april 2020 till 31 maj 2020 så tar staten hela kostnaden för sjuklön. Företaget betalar
+                sjuklön som normalt dag 2-14 och får efter arbetsgivardeklaration är inskickad en kreditering av
+                Försäkringskassan.</p>
+            <p>Detta gäller även anställda som är ägare och familj till ägare. Denna grupp anställa anmäler sällan eller
+                aldrig sjukdom normalt då kostnadsbesparing i företaget kommer med lika stort inkomstbortfall privat
+                (efter skatter).</p>
+            <p>Du bör som ägare eller familj till ägare under krisperioden alltid anmäla frånvaro vid sjukdom oavsett
+                tidigare praxis. Detta ger en minskad privatinkomst om 20% under sjukdomsperioden medan företagets
+                kostnad för den anställde minskar med 100% för samma period.</p>
+            <p>Krav på läkarintyg från dag 8 är borttaget och lämnas nu istället dag 21 till Försäkringskassan.</p>
+            <Header as='h2'>Så gör du - som arbetsgivare</Header>
+            <ul>
+                <li>Betala ut sjuklön som normalt.</li>
+                <li>Skicka in arbetsgivardeklaration som normalt.</li>
+                <li>Ersättning betalas ut automatiskt månaden efter.</li>
+            </ul>
+            <Header as='h2'>Så gör du - som anställd</Header>
+            <ul>
+                <li>Som anställd behöver du inte göra något för sjukdag 2-14. Sjuklön betalas ut som vanligt av
+                    arbetsgivaren.
+                </li>
+                <li>Ifall du är sjuk mer än 14 dagar så begärs ersättning hos Försäkringskassan.</li>
+                <li>Läkarintyg behöver först lämnas ifall du är sjuk mer än 21 dagar, istället för normala 8 dagar.</li>
+            </ul>
+
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p><a
+                href="https://www.forsakringskassan.se/privatpers/coronaviruset-det-har-galler">Försäkringskassan</a>
+            </p>
+            <p><a
+                href="https://www.regeringen.se/regeringens-politik/socialforsakringar/atgarder-inom-sjukforsakringen-med-anledning-av-corona/">Regeringen</a>
+            </p>
         </>
     )
+}
+
+function SanktHyra() {
+    return (
+        <>
+            <p>Under tiden 1 april 2020 till och med den 30 juni 2020 så kan stöd sökas av hyresvärdar för att delvis
+                kompensera tillfälligt sänkta hyror.</p>
+            <p>Ifall en hyresgäst och hyresvärd kan komma överens om tillfälligt sänkt hyra så kan hyresvärden sedan
+                söka stöd för upp till halva hyressänkningen, dock aldrig mer än 25% av ursprungliga hyran.</p>
+            <p>Gäller endast företag i det som anses vara utsatta branscher så som sällanköpshandel, hotell, restaurang
+                och vissa andra verksamheter. Här omfattas exempelvis butikshandel, logiverksamhet, restauranger samt
+                arrangemang av kongresser/mässor men även konsumenttjänster så som tandläkare, fysioterapeutisk
+                verksamhet, hår- och kroppsvård.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+            <p>De branscher som omfattas av stödet finns upptagna i förordningen i form av koder för svensk
+                näringsgrensindelning (SNI). SNI-koden är den kod som anges till Skatteverket när man registrerar sitt
+                företag. Du kan kontrollera ditt företags SNI-kod genom att logga in på verksamt.se och kontrollera mot
+                den <a
+                    href="https://www.boverket.se/contentassets/2907200575a8449780d8b2df5209395e/sni-koder-for-stod-nar-vissa-lokalhyresgaster-fatt-rabatt-pa-hyran.pdf">officiella
+                    listan här</a></p>
+
+            <Header as='h2'>Så gör du - som hyresgäst</Header>
+            <ul>
+                <li>Kontrollera att hyresgästens företag SNI-kod är upptagen <a
+                    href="https://www.boverket.se/contentassets/2907200575a8449780d8b2df5209395e/sni-koder-for-stod-nar-vissa-lokalhyresgaster-fatt-rabatt-pa-hyran.pdf">här</a>.
+                </li>
+                <li>Kontrollera på länsstyrelsen att övriga detaljer stämmer in på er situation.</li>
+                <li>Diskutera fram en rabatt med hyresvärd, påminn om att endast halva hyressänkningen kommer att drabba
+                    hyresvärden. En något lägre hyra är bättre än ingen hyra och tom lokal.
+                </li>
+                <li>Gör en skriftlig överenskommelse om rabatt på lokalhyra mellan hyresvärd och hyresgäst senast 30
+                    juni 2020. Rabatten ska gälla under perioden 1 april till och med den 30 juni.
+                </li>
+            </ul>
+
+            <Header as='h2'>Så gör du - som hyresvärd</Header>
+            <ul>
+                <li>Kontrollera att hyresgästens företag SNI-kod är upptagen <a
+                    href="https://www.boverket.se/contentassets/2907200575a8449780d8b2df5209395e/sni-koder-for-stod-nar-vissa-lokalhyresgaster-fatt-rabatt-pa-hyran.pdf">här</a>.
+                </li>
+                <li>Kontrollera på länsstyrelsen att övriga detaljer stämmer in på er situation.</li>
+                <li>Diskutera fram en rabatt med hyresgäst, kom ihåg att endast halva hyressänkningen kommer att drabba
+                    ditt företag. En något lägre hyra är bättre än ingen hyra och tom lokal.
+                </li>
+                <li>Gör en skriftlig överenskommelse om rabatt på lokalhyra mellan hyresvärd och hyresgäst senast 30
+                    juni 2020. Rabatten ska gälla under perioden 1 april till och med den 30 juni.
+                </li>
+                <li>Ansökan om stöd kan göras hos din länsstyrelse från och med 1 juli 2020 till och med 31 augusti
+                    2020. Boverket kommer ansvara för e-tjänsten.
+                </li>
+            </ul>
+
+
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p><a
+                href="https://www.regeringen.se/artiklar/2020/04/regeringen-har-beslutat-om-tillfallig-rabatt-for-fasta-hyreskostnader-i-utsatta-branscher/">Regeringen</a>
+            </p>
+
+            <p><a
+                href="https://www.lansstyrelsen.se/vastra-gotaland/samhalle/planering-och-byggande/stod-for-sankta-hyror-i-utsatta-branscher.html">Länsstyrelsen</a>
+            </p>
+            <p><a
+                href="https://www.boverket.se/sv/bidrag--garantier/stod-nar-vissa-lokalhyresgaster-fatt-rabatt-pa-hyran/?tab=fragor-svar">Boverket</a>
+            </p>
+        </>
+    )
+}
+
+
+function SanktArbetsgivaravgift() {
+    return (
+        <>
+            <p>Arbetsgivaravgifterna sänks mellan 1 mars och 30 juni 2020. Företagen betalar endast ålderspensionsavgift
+                på löner som ges ut under denna period.</p>
+            <p>Nedsättningen gäller för upp till 30 anställda per företag och upp till en lönesumma om 25.000 kronor per
+                anställd och månad. Det innebär att arbetsgivaren får en lättnad med upp till 5.302,50 kr per anställd
+                och månad.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+            <p>Arbetsgivaravgiften sänks tillfälligt från 31,42% till 10,21% vilket motsvarar endast
+                Ålderspensionsavgift. Övrigt avgifter så som Sjukförsäkringsavgift, Föräldraförsäkringsavgift,
+                Efterlevnadspensionsavgift, Arbetsmarknadsavgift, Arbetsskadeavgift och Allmän löneavgift om totalt
+                21,21% faller bort.</p>
+            <p>Maximal besparing skulle vara för ett företag med minst 30 anställda med lön om minst 25.000 kronor per
+                anställd. För de fyra månaderna skulle det sänka kostnaderna med totatl 636.300kr.</p>
+            <p>Denna sänkta arbetsgivaravgift gäller för alla företag med anställda. Även om företaget inte drabbats av
+                Covid-10 eller ifall företaget får andra stöd så som korttidsarbete.</p>
+
+            <Header as='h2'>Så gör du - som anställd</Header>
+            <p>Du kommer inte märka något som anställd.</p>
+
+            <Header as='h2'>Så gör du - som arbetsgivare</Header>
+            <ul>
+                <li>Vid inlämning av arbetsgivardeklaration (AGI) ska ruta 063 kryssas i för de anställda ni önskar
+                    nersatt arbetsgivaravgift.
+                </li>
+                <li>Om ni har mer än 30 anställda så kryssa i ruta 063 på de anställda som har minst 25.000kr i
+                    månadslön.
+                </li>
+            </ul>
+
+
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>
+                <a href="https://www.regeringen.se/artiklar/2020/03/om-forslaget-tillfalligt-sankta-socialavgifter-med-anledning-av-coronaviruset/">Regeringen</a>
+            </p>
+
+            <p>
+                <a href="https://skatteverket.se/omoss/press/nyheter/2020/nyheter/tillfalligtsanktaarbetsgivaravgifterochegenavgifter.5.1c68351d170ce5545271209.html">Skatteverket</a>
+            </p>
+        </>
+
+    )
+}
+
+function SanktEgenavgift() {
+    return (
+        <>
+            <p>Under 2020 sänks egenavgifterna på överskott upp till 100.000kr för dem som idag betalar fulla
+                egenavgifter.</p>
+            <p>Du har rätt till sänkta egenavgifter om du beräknar ett överskott i en aktiv näringsverksamhet och är
+                född 1955 eller senare. Istället för att betala full egenavgift (28,97 procent) betalar du bara
+                ålderspensionsavgift (10,21 procent) på överskott upp till 100 000 kronor. Har du ett högre överskott
+                betalar du alla avgifter på den del som överstiger 100 000 kronor.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+            <p>Sänkningen görs automatiskt vid beräkning av din slutliga skatt. Du behöver inte göra något.</p>
+
+
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet är Skatteverket</p>
+            <p>
+                <a href="https://skatteverket.se/foretagochorganisationer/drivaforetag/enskildnaringsverksamhet/egenavgifter.4.361dc8c15312eff6fd1f678.html">Skatteverket</a>
+            </p>
+
+            <p>
+                <a href="https://www.regeringen.se/artiklar/2020/03/om-forslaget-tillfalligt-sankta-socialavgifter-med-anledning-av-coronaviruset/">Regeringen</a>
+            </p>
+
+        </>
+
+    )
+}
+
+function AnstandArbetsgivaravgiftInkomstskatt() {
+    return (
+        <>
+            <p>De nya reglerna innebär att företag kan få anstånd med betalning av arbetsgivaravgifter, preliminärskatt
+                på lön och moms. Företaget betalar en relativt låg ränta motsvarande 1,6-3,1% (läs mer nedan).</p>
+            <p>Företagens möjlighet till anstånd omfattar tre månaders skatteinbetalningar och lämnas under längst 12
+                månader. När det gäller anstånd för moms som redovisas helårsvis så kan anstånd lämnas för högst ett
+                beskattningsår och som längst under 12 månader.</p>
+            <p>Anstånd kommer inte beviljas företag som missköter sin ekonomi eller på annat sätt är oseriösa. Anstånd
+                får inte heller beviljas företag som har större skatteskulder.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+            <p>För moms som redovisas helårsvis kan anståndet beviljas retroaktivt från och med den 27 december 2019.
+                Det innebär att företag som har betalat in momsen från och med den 27 december 2019 kan få skatten
+                återbetald av Skatteverket.</p>
+            <p>För företag som redovisar moms månadsvis eller kvartalsvis kan anstånd beviljas retroaktivt för perioder
+                från och med januari 2020.</p>
+            <p>Företag som redovisar arbetsgivaravgifter och preliminärskatt på lön kommer kunna begära anstånd och
+                återbetalning från och med januari 2020.</p>
+            <p>Under de första sex månaderna av anståndet kommer endast en ränta på 1,25 procent tas ut. Därefter
+                tillkommer en anståndsavgift på 0,2 procent per månad. Det motsvarar en avdragsgill ränta på 3,1 procent
+                per år, eller 1,6 procent under det första halvåret uttryckt som årsränta.
+                Högre äldre räntor anges felaktigt hos en hel del källor men ovan är gällande ränta enligt Regeringen
+                den 17 april 2020. </p>
+
+            <Header as='h2'>Så gör du</Header>
+            <ul>
+                <li>Ansök hos <a
+                    href="https://skatteverket.se/foretagochorganisationer/sjalvservice/allaetjanster/tjanster/ansokomtillfalligtanstandmedskattebetalning.4.1c68351d170ce5545271593.html">Skatteverket</a>
+                </li>
+                <li>Glöm ej att företaget kommer att detta är ett lån med ränta som inte är avdragsgill. Första 6
+                    månaderna har lägst ränta med årsränta på 1,25%
+                </li>
+            </ul>
+
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet är Skatteverket</p>
+            <p>
+                <a href="https://www4.skatteverket.se/rattsligvagledning/edition/2020.4/382989.html#update_20200407075948">Skatteverket</a>
+            </p>
+        </>
+
+    )
+}
+
+
+function AlmiLan() {
+    return (
+        <>
+            <p>Almi har både vanliga företagslån med extra tillskott från regeringen och ett så kallat brygglån.
+                Brygglånet är extra relevant om företaget drabbats av Covid-19 utbrottet. </p>
+            <p>Lånesumma och ränta sätts individuellt men max 4,95% och en halv miljon för startups. Då villkor och
+                möjligheter skiljer sig beroende på företagets förutsättningar är det lättast att prata direkt med Almi
+                om lånemöjligheter så fort som möjligt.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+
+            <ul>
+                <li>Individuell räntesättning med rörlig ränta, som för närvarande är högst 4,95%.</li>
+                <li>Möjlighet finns att ansöka om ränte- och amorteringsuppskov upp till 12 månader.</li>
+                <li>Löptiden är 12 månader. Efter 12 månader finns, efter dialog med rådgivare, möjlighet att lägga om
+                    lånet till nytt lån med då gällande ordinarie villkor.
+                </li>
+                <li>Startups har möjlighet att låna upp till 500 000 kr.</li>
+                <li>Ingen uppläggningsavgift.</li>
+                <li>Almi strävar alltid efter medfinansiering. Det kan vara medfinansiering från bank eller i form av
+                    ägarkapital. Medfinansiering är ett krav på belopp över 3 miljoner kr.
+                </li>
+                <li>En rådgivare från Almi kommer att göra en individuell kreditprövning. Den innefattar bland annat en
+                    genomgång av nuvarande säkerheter för dig som redan har lån hos Almi, och vilka säkerheter som är
+                    aktuella för dig som blir ny lånekund hos Almi. I normala fall handlar det om att ta ut
+                    företagsinteckningar och ägarborgen som normalt ligger på 10-20%.
+                </li>
+            </ul>
+
+            <Header as='h2'>Så gör du</Header>
+            <p>Kontakta Almi</p>
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet är Almi</p>
+            <p>
+                <a href="https://www.almi.se/information-med-anledning-av-coronaviruset/">Almi</a>
+            </p>
+        </>
+    )
+}
+
+function BanklanBorgen() {
+    return (
+        <>
+            <p>Staten har inrättat något som kallas Företagsakuten. I praktiken så innebär det att Staten garanterar upp
+                till 70 procent av lånebeloppet på vissa företagslån. Riksgälden ställer ut garantin till kreditinstitut
+                så som banker som i sin tur lånar ut till företagen. Företag kan ansöka om lån inom garantiprogrammet
+                genom att vända sig till sin långivare/bank.</p>
+            <p>Då majoriteten av risken i lån försvinner med denna garanti så är det avsevärt större sannolikhet att få
+                lån som företag och med bättre ränta än normalt.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+
+            <p>Med stor sannolikhet är din bank ansluten till garantiprogramet redan, du hittar en <a
+                href="https://www.riksgalden.se/sv/var-verksamhet/garantier-och-lan/foretagsakuten-garantiprogram-for-foretag/anslutna-banker-och-institut-inom-foretagsakuten/">komplett
+                aktuell lista hos Riksgälden.</a></p>
+
+            <Header as='h2'>Så gör du</Header>
+            <p>Kontakta först och främst företagets bank som har en tidigare relation med företaget. </p>
+            <p>Prova även diskutera med andra långivare. Tryck på att risken och därmed räntan bör reflekteras i och med
+                företagsakuten.</p>
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet: Riksgälden</p>
+            <p>Företagets motpart: Din bank</p>
+            <p>
+                <a href="https://www.riksgalden.se/sv/var-verksamhet/garantier-och-lan/foretagsakuten-garantiprogram-for-foretag/">Riksgälden</a>
+            </p>
+        </>
+    )
+}
+
+function PrelSkatt() {
+    return (
+        <>
+            <p>Du kan ändra företagets preliminära skatt för år 2020 om du beräknar att få ett sämre resultat eller till
+                och med gå med förlust. Det innebär att du får betala in mindre eller ingen skatt under de kommande
+                månaderna samt att du kan få tillbaka den skatt du betalat in för januari och februari.</p>
+            <p>Du kan lämna in en ny preliminär inkomstdeklaration hur många gånger som helst under året. På så sätt
+                slipper du betala in för mycket i preliminärskatt.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+
+            <p>Preliminärskatten är 21,4% av din förväntade vinst.</p>
+            <p>Som exempel ett företag som tidigare har räknat med en miljon går in i maj månad för att sänka sin
+                uppskattning till noll för 2020. Företaget slipper då att ligga ute med 214.000kr under år 2020.
+                71.333kr är dessutom redan betalt under månaderna januari till mars och kommer att betalas tillbaks till
+                Skattekontot.</p>
+
+            <Header as='h2'>Så gör du</Header>
+            <p>Gå till <a
+                href="https://www.skatteverket.se/foretagochorganisationer/sjalvservice/allaetjanster/tjanster/preliminarinkomstdeklaration.4.71004e4c133e23bf6db8000109612.html">Skatteverkets
+                E-tjänst för Preliminär Inkomstdeklaration</a></p>
+            <p>Ange företagets nya mindre uppskattade vinst.</p>
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet är Skatteverket</p>
+            <p>
+                <a href="https://skatteverket.se/foretagochorganisationer/skatter/betalaochfatillbaka/debiteradpreliminarskatt.4.233f91f71260075abe8800010616.html">Skatteverket</a>
+            </p>
+        </>
+    )
+}
+
+function AnstandMoms() {
+    return (
+        <>
+            <p>De nya reglerna innebär att företag kan få anstånd med betalning av arbetsgivaravgifter, preliminärskatt på lön och moms. Företaget betalar en relativt låg ränta motsvarande 1,6-3,1% (läs mer nedan).</p>
+            <p>Företagens möjlighet till anstånd omfattar tre månaders skatteinbetalningar och lämnas under längst 12 månader. När det gäller anstånd för moms som redovisas helårsvis så kan anstånd lämnas för högst ett beskattningsår och som längst under 12 månader.</p>
+            <p>Anstånd kommer inte beviljas företag som missköter sin ekonomi eller på annat sätt är oseriösa. Anstånd får inte heller beviljas företag som har större skatteskulder.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+
+            <p>För moms som redovisas helårsvis kan anståndet beviljas retroaktivt från och med den 27 december 2019. Det innebär att företag som har betalat in momsen från och med den 27 december 2019 kan få skatten återbetald av Skatteverket.</p>
+            <p>För företag som redovisar moms månadsvis eller kvartalsvis kan anstånd beviljas retroaktivt för perioder från och med januari 2020.</p>
+<p>Företag som redovisar arbetsgivaravgifter och preliminärskatt på lön kommer kunna begära anstånd och återbetalning från och med januari 2020.</p>
+<p>Under de första sex månaderna av anståndet kommer endast en ränta på 1,25 procent tas ut. Därefter tillkommer en anståndsavgift på 0,2 procent per månad. Det motsvarar en avdragsgill ränta på 3,1 procent per år, eller 1,6 procent under det första halvåret uttryckt som årsränta.
+Högre äldre räntor anges felaktigt hos en hel del källor men ovan är gällande ränta enligt Regeringen den 17 april 2020. </p>
+            <Header as='h2'>Så gör du</Header>
+            <p>Ansök på <a
+                href="https://skatteverket.se/foretagochorganisationer/sjalvservice/allaetjanster/tjanster/ansokomtillfalligtanstandmedskattebetalning.4.1c68351d170ce5545271593.html">Skatteverkets
+                Skatteverkets E-tjänst</a></p>
+            <p>Glöm ej att företaget kommer att detta är ett lån med ränta som inte är avdragsgill. Första 6 månaderna har lägst ränta med årsränta på 1,25%</p>
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet är Skatteverket</p>
+            <p>
+                <a href="https://www4.skatteverket.se/rattsligvagledning/edition/2020.4/382989.html#update_20200407075948">Skatteverket</a>
+            </p>
+        </>
+
+    )
+}
+
+function StartaEgetBidrag() {
+    return (
+        <>
+            <p>Har ditt företag fått starta-eget-bidrag av Arbetsförmedlingen så finns det möjlighet att förlänga detta ytterligare 6 månader. Egentligen ska bidraget fortfarande vara aktivt men det finns möjligheter även ifall det nyligen har löpt ut.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+
+            <p>Bra information från officiella källor saknas när detta uppdateras den 29 april 2020. Men är bekräftat den 5 april 2020 av ansvariga för starta-eget-bidraget hos Arbetsförmedlingen att detta är aktivt och mer information ska publiceras.</p>
+
+            <Header as='h2'>Så gör du</Header>
+            <p>Kontakta omedelbart din handläggare hos Arbetsförmedlingen och fråga om förlängning av bidraget.</p>
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>
+                <a href="https://arbetsformedlingen.se/for-arbetssokande/stod-och-ersattning/stod-a-o/starta-eget-stod-till-start-av-naringsverksamhet">Arbetsförmedlingen</a>
+            </p>
+        </>    )
 }
 
 function SjuklonEF() {
@@ -267,23 +553,8 @@ function SjuklonEF() {
     )
 }
 
-function SanktHyra() {
-    return (
-        <><p>För att hjälpa branscher som sällanköpshandel (t.ex kläder, leksaker och elektronik), hotell och restaurang
-            har regeringen förslagit att påskynda omförhandling av hyror. Förslaget är att staten står för 50 procent av
-            hyresnedsättningen och upp till 25 procent av den ursprungliga fasta hyran.</p>
-            <p>Stödet gäller från 1 april – 30 juni 2020 och kan sökas i efterhand.</p>
-        </>
-    )
-}
 
-function StartaEgetBidrag() {
-    return (
-        <>
-            <p>Förlängt Starta eget Bidrag.</p>
-        </>
-    )
-}
+
 
 
 /*
@@ -410,7 +681,7 @@ const plans = [
     {
         isLoan: false,
         title: 'Sänkt Egenavgift',
-        description: <SanktArbetsgivaravgift/>,
+        description: <SanktEgenavgift/>,
         isEligible: (data) => {
             if (data.company_type == 'ef') {
                 return 1;
@@ -422,7 +693,7 @@ const plans = [
     {
         isLoan: true,
         title: 'Anstånd arbetsgivaravgift och inkomstskatt',
-        description: <AnstandMoms/>,
+        description: <AnstandArbetsgivaravgiftInkomstskatt/>,
         isEligible: (data) => {
             if (data.company_type == 'ab' && data.employees_count >= 1 && !data.dividend && !data.insolvent) {
                 return 1;
