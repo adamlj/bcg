@@ -502,21 +502,33 @@ function PrelSkatt() {
 function AnstandMoms() {
     return (
         <>
-            <p>De nya reglerna innebär att företag kan få anstånd med betalning av arbetsgivaravgifter, preliminärskatt på lön och moms. Företaget betalar en relativt låg ränta motsvarande 1,6-3,1% (läs mer nedan).</p>
-            <p>Företagens möjlighet till anstånd omfattar tre månaders skatteinbetalningar och lämnas under längst 12 månader. När det gäller anstånd för moms som redovisas helårsvis så kan anstånd lämnas för högst ett beskattningsår och som längst under 12 månader.</p>
-            <p>Anstånd kommer inte beviljas företag som missköter sin ekonomi eller på annat sätt är oseriösa. Anstånd får inte heller beviljas företag som har större skatteskulder.</p>
+            <p>De nya reglerna innebär att företag kan få anstånd med betalning av arbetsgivaravgifter, preliminärskatt
+                på lön och moms. Företaget betalar en relativt låg ränta motsvarande 1,6-3,1% (läs mer nedan).</p>
+            <p>Företagens möjlighet till anstånd omfattar tre månaders skatteinbetalningar och lämnas under längst 12
+                månader. När det gäller anstånd för moms som redovisas helårsvis så kan anstånd lämnas för högst ett
+                beskattningsår och som längst under 12 månader.</p>
+            <p>Anstånd kommer inte beviljas företag som missköter sin ekonomi eller på annat sätt är oseriösa. Anstånd
+                får inte heller beviljas företag som har större skatteskulder.</p>
             <Header as='h2'>Läs mer & hur du räknar</Header>
 
-            <p>För moms som redovisas helårsvis kan anståndet beviljas retroaktivt från och med den 27 december 2019. Det innebär att företag som har betalat in momsen från och med den 27 december 2019 kan få skatten återbetald av Skatteverket.</p>
-            <p>För företag som redovisar moms månadsvis eller kvartalsvis kan anstånd beviljas retroaktivt för perioder från och med januari 2020.</p>
-<p>Företag som redovisar arbetsgivaravgifter och preliminärskatt på lön kommer kunna begära anstånd och återbetalning från och med januari 2020.</p>
-<p>Under de första sex månaderna av anståndet kommer endast en ränta på 1,25 procent tas ut. Därefter tillkommer en anståndsavgift på 0,2 procent per månad. Det motsvarar en avdragsgill ränta på 3,1 procent per år, eller 1,6 procent under det första halvåret uttryckt som årsränta.
-Högre äldre räntor anges felaktigt hos en hel del källor men ovan är gällande ränta enligt Regeringen den 17 april 2020. </p>
+            <p>För moms som redovisas helårsvis kan anståndet beviljas retroaktivt från och med den 27 december 2019.
+                Det innebär att företag som har betalat in momsen från och med den 27 december 2019 kan få skatten
+                återbetald av Skatteverket.</p>
+            <p>För företag som redovisar moms månadsvis eller kvartalsvis kan anstånd beviljas retroaktivt för perioder
+                från och med januari 2020.</p>
+            <p>Företag som redovisar arbetsgivaravgifter och preliminärskatt på lön kommer kunna begära anstånd och
+                återbetalning från och med januari 2020.</p>
+            <p>Under de första sex månaderna av anståndet kommer endast en ränta på 1,25 procent tas ut. Därefter
+                tillkommer en anståndsavgift på 0,2 procent per månad. Det motsvarar en avdragsgill ränta på 3,1 procent
+                per år, eller 1,6 procent under det första halvåret uttryckt som årsränta.
+                Högre äldre räntor anges felaktigt hos en hel del källor men ovan är gällande ränta enligt Regeringen
+                den 17 april 2020. </p>
             <Header as='h2'>Så gör du</Header>
             <p>Ansök på <a
                 href="https://skatteverket.se/foretagochorganisationer/sjalvservice/allaetjanster/tjanster/ansokomtillfalligtanstandmedskattebetalning.4.1c68351d170ce5545271593.html">Skatteverkets
                 Skatteverkets E-tjänst</a></p>
-            <p>Glöm ej att företaget kommer att detta är ett lån med ränta som inte är avdragsgill. Första 6 månaderna har lägst ränta med årsränta på 1,25%</p>
+            <p>Glöm ej att företaget kommer att detta är ett lån med ränta som inte är avdragsgill. Första 6 månaderna
+                har lägst ränta med årsränta på 1,25%</p>
             <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
             <p>Ansvarig myndighet är Skatteverket</p>
             <p>
@@ -530,10 +542,14 @@ Högre äldre räntor anges felaktigt hos en hel del källor men ovan är gälla
 function StartaEgetBidrag() {
     return (
         <>
-            <p>Har ditt företag fått starta-eget-bidrag av Arbetsförmedlingen så finns det möjlighet att förlänga detta ytterligare 6 månader. Egentligen ska bidraget fortfarande vara aktivt men det finns möjligheter även ifall det nyligen har löpt ut.</p>
+            <p>Har ditt företag fått starta-eget-bidrag av Arbetsförmedlingen så finns det möjlighet att förlänga detta
+                ytterligare 6 månader. Egentligen ska bidraget fortfarande vara aktivt men det finns möjligheter även
+                ifall det nyligen har löpt ut.</p>
             <Header as='h2'>Läs mer & hur du räknar</Header>
 
-            <p>Bra information från officiella källor saknas när detta uppdateras den 29 april 2020. Men är bekräftat den 5 april 2020 av ansvariga för starta-eget-bidraget hos Arbetsförmedlingen att detta är aktivt och mer information ska publiceras.</p>
+            <p>Bra information från officiella källor saknas när detta uppdateras den 29 april 2020. Men är bekräftat
+                den 5 april 2020 av ansvariga för starta-eget-bidraget hos Arbetsförmedlingen att detta är aktivt och
+                mer information ska publiceras.</p>
 
             <Header as='h2'>Så gör du</Header>
             <p>Kontakta omedelbart din handläggare hos Arbetsförmedlingen och fråga om förlängning av bidraget.</p>
@@ -541,7 +557,53 @@ function StartaEgetBidrag() {
             <p>
                 <a href="https://arbetsformedlingen.se/for-arbetssokande/stod-och-ersattning/stod-a-o/starta-eget-stod-till-start-av-naringsverksamhet">Arbetsförmedlingen</a>
             </p>
-        </>    )
+        </>)
+}
+
+function AvsattningPeriodiseringsfond() {
+    return (
+        <>
+            <p>Periodiseringsfond innebär att du kan skjuta upp en del av beskattningen av inkomsten i
+                näringsverksamheten till ett senare år. För dig som driver enskild näringsverksamhet eller är delägare i
+                handelsbolag har regeringen bestämt att ändra reglerna för periodiseringsfonder.</p>
+            <p>Reglerna innebär att du i din deklaration för 2020 kan sätta av 100 procent av din skattepliktiga vinst
+                för år 2019 i en periodiseringsfond, dock högst 1 miljon kronor. Avsättningen till periodiseringsfonden
+                kommer du sedan att kunna kvitta mot dina framtida förluster. För många företagare innebär det att den
+                skattepliktiga vinsten därmed sätts ned till noll kronor. Detta är ett alternativ till de vanliga
+                reglerna som finns kvar.</p>
+            <Header as='h2'>Läs mer & hur du räknar</Header>
+            <p>Skatten för inkomstår 2019 är i regel redan inbetald till skattekontot i form av preliminär skatt. Det
+                snabbaste sättet att få tillbaka preliminärskatten är att begära omprövning av sin preliminära
+                inkomstdeklaration för 2019. Detta är möjligt fram till halvårsskiftet. Om näringsidkaren bara gör
+                avdraget i den ordinarie inkomstdeklarationen sker utbetalningen som skatteåterbäring efter att
+                slutskattebeskedet har kommit. En näringsidkare som redan har lämnat sin inkomstdeklaration och nu vill
+                använda möjligheten till utökad avsättning till periodiseringsfond behöver lämna in en ny
+                deklaration.</p>
+            <p>Enligt de nuvarande reglerna har enskilda näringsidkare och fysiska personer som är delägare i svenska
+                handelsbolag möjlighet att sätta av 30 procent av årets vinst till periodiseringsfond.</p>
+            <p>De nya reglerna träder i kraft den 6 april 2020 och tillämpas retroaktivt avseende år 2019.</p>
+            <p>En frisör har en enskild firma med en omsättning på 710 000 kronor och en vinst på 500 000 kronor för
+                2019 före avsättning till periodiseringsfond.</p>
+            <p>Normalt sett sätter frisören i vårt exempel av 30 procent av vinsten i periodiseringsfond, det vill säga
+                150 000 kronor för 2019. Resten, dvs. 350 000 kronor är överskott före schablonavdrag för egenavgifter.
+                Den preliminära skatten för 2019 uppgår då till cirka 116 000 kronor (om schablonavdrag för egenavgifter
+                gjorts med 25 procent, kommunalskattesatsen är 31,5 procent och begravningsavgiften uppgår till 0,253
+                procent) och det har frisören redan löpande betalat in på sitt skattekonto.</p>
+            <p>Genom förslaget kan frisören redan nu begära omprövning av sin preliminära inkomstdeklaration och sätta
+                av hela överskottet om 500 000 kronor till periodiseringsfond. På så sätt blir frisörens vinst för 2019
+                noll kronor. Därmed kan frisören få tillbaka de 116 000 kronor som betalades in på skattekontot för
+                detta år. Den vanliga inkomstdeklarationen lämnar frisören i normalfallet in senast den 4 maj 2020.</p>
+            <Header as='h2'>Så gör du</Header>
+            <p>Det snabbaste sättet att få tillbaka preliminärskatten är att begära omprövning av den preliminära
+                inkomstdeklarationen för 2019. <a
+                    href="https://www.skatteverket.se/foretagochorganisationer/sjalvservice/allaetjanster/tjanster/preliminarinkomstdeklaration.4.71004e4c133e23bf6db8000109612.html">Använd
+                    Skatteverkets e-tjänst</a></p>
+            <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
+            <p>Ansvarig myndighet: Skatteverket</p>
+            <p>
+                <a href="https://www.skatteverket.se/foretagochorganisationer/sjalvservice/allaetjanster/tjanster/preliminarinkomstdeklaration.4.71004e4c133e23bf6db8000109612.html">Skatteverket</a>
+            </p>
+        </>)
 }
 
 function SjuklonEF() {
@@ -552,9 +614,6 @@ function SjuklonEF() {
         </>
     )
 }
-
-
-
 
 
 /*
@@ -767,7 +826,18 @@ const plans = [
                 return 3;
             }
         }
-
+    },
+    {
+        isLoan: false,
+        title: 'Avsättning till periodiseringsfond i deklarationen 2020',
+        description: <AvsattningPeriodiseringsfond/>,
+        isEligible: (data) => {
+            if (data.company_type == 'ef') {
+                return 1;
+            } else {
+                return 3;
+            }
+        }
     }
 ];
 

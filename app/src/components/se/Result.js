@@ -17,9 +17,17 @@ export default function Result({data, handleChange, ...props}) {
     const calculateSavings = () => {
         let savings = 0;
         if (data.employees_count > 0) {
+            let salarySum = 0;
             data.employees.map((employee, index) => {
-                savings += employee.salary * 0.5;
+                salarySum += employee.salary;
             })
+            savings += salarySum * 1, 3142 * 0, 53 * 6;
+
+            if (data.employees_count > 30) {
+                savings += 30 * 25000 * 0, 2121;
+            } else {
+                savings += data.employees_count * 25000 * 0, 2121;
+            }
         }
 
         if (data.monthly_rent && data.exposed_business) {
