@@ -34,6 +34,8 @@ const Layout = ({t, ...props}) => {
                         <Link href="/about-us">
                             <Menu.Item as='a'>{t('About us')}</Menu.Item>
                         </Link>
+                        {
+                            /*
                         <Dropdown item simple text={t('Language')}>
                             <Dropdown.Menu>
                                 <Dropdown.Item onClick={() => i18n.changeLanguage('sv')}>
@@ -44,6 +46,8 @@ const Layout = ({t, ...props}) => {
                                 </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
+                             */
+                        }
                     </Menu.Menu>
                 </Container>
             </Menu>
