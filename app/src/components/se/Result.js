@@ -64,8 +64,12 @@ export default function Result({data, handleChange, ...props}) {
                     :
                     <Header>{props.t('Se vilken hjälp du kan få')}</Header>
                 }
-
             </div>
+
+            <Message>
+                Detta är en guide för hjälpa företagare att hitta rätt i krisen, vad exakta villkor blir måste alltid ses hos ansvarig myndighet. Projektet drivs ideellt och är ingen rådgivning
+            </Message>
+
             <Message positive>
                 {!saved &&
                 <>
@@ -160,6 +164,7 @@ export default function Result({data, handleChange, ...props}) {
 .heading {
     text-align:center;
     margin-top:-20px;
+    margin-bottom:20px;
 }
 .heading .ui.header {
     font-size:32px;

@@ -70,7 +70,7 @@ function Korttidsarbete() {
             <Header as='h2'>Så gör du - som arbetsgivare</Header>
             <ol>
                 <li>Kontrollera med kollektivavtal att korttidsarbete är lämpligt</li>
-                <li>Skriv avtal med minst 70% av de anställda.</li>
+                <li>Skriv avtal med minst 70% av de anställda. <a href="https://www.mallar.eu/wp-content/uploads/2020/03/Kortidsarbete-avtal.docx">Ladda ned mall här</a></li>
                 <li>Betala ut lön som vanligt till anställda med avdrag på 4-12% (enligt tabellen ovan)</li>
                 <li>Gå till https://korttidsarbete.minansokan.se/#/ och följ instruktionerna. Excelfilen är viktig att
                     fylla i korrekt då den måste bifogas i ansökan (inte bara beräkningshjälp som felaktigt anges på
@@ -156,9 +156,7 @@ function KarensAvdragEF() {
                 <li>Gå till <a href="https://www.forsakringskassan.se/">Försäkringskassan</a></li>
                 <li>Logga in som privatperson</li>
                 <li>Välj "Ansök om ersättning för karens"</li>
-                <li>Fyll i att du är anställd, vilken dag det gäller, uppgifter till din arbetsgivare och bankkonto för
-                    utbetalning
-                </li>
+                <li>Fyll i uppgifter om din enskilda firma och sjukdom</li>
                 <li>Beslut och utbetalning görs normal inom 3-5 arbetsdagar</li>
             </ul>
 
@@ -385,9 +383,7 @@ function AnstandArbetsgivaravgiftInkomstskatt() {
                 <li>Ansök hos <a
                     href="https://skatteverket.se/foretagochorganisationer/sjalvservice/allaetjanster/tjanster/ansokomtillfalligtanstandmedskattebetalning.4.1c68351d170ce5545271593.html">Skatteverket</a>
                 </li>
-                <li>Glöm ej att företaget kommer att detta är ett lån med ränta som inte är avdragsgill. Första 6
-                    månaderna har lägst ränta med årsränta på 1,25%
-                </li>
+                <li>Glöm ej att detta är ett lån med ränta som inte är avdragsgill. De första 6 månaderna har lägst ränta med en årsränta på 1,25%</li>
             </ul>
 
             <Header as='h2'>Ansvarig myndighet och officiella källor</Header>
@@ -606,15 +602,6 @@ function AvsattningPeriodiseringsfond() {
         </>)
 }
 
-function SjuklonEF() {
-    return (
-        <><p>Regeringen har beslutat att arbetsgivare får ersättning av staten för sjuklönekostnaden för april och maj.
-            Arbetsgivaren rapporterar in sina sjuklönekostnader i samband med arbetsgivardeklarationen. Ersättningen
-            sker i form av kreditering på skattekontot. </p>
-        </>
-    )
-}
-
 
 /*
 isEligible have 4 levels:
@@ -673,20 +660,6 @@ const plans = [
         isLoan: false,
         title: 'Karensavdrag',
         description: <KarensAvdragEF/>,
-        isEligible: (data) => {
-            if (data.company_type == 'ef' && data.employees_count >= 1) {
-                return 1;
-            } else if (data.company_type == 'ef' && data.employees_count < 1) {
-                return 2;
-            } else {
-                return 4;
-            }
-        }
-    },
-    {
-        isLoan: false,
-        title: 'Sjuklön',
-        description: <SjuklonEF/>,
         isEligible: (data) => {
             if (data.company_type == 'ef' && data.employees_count >= 1) {
                 return 1;
@@ -835,7 +808,7 @@ const plans = [
             if (data.company_type == 'ef') {
                 return 1;
             } else {
-                return 3;
+                return 4;
             }
         }
     }
