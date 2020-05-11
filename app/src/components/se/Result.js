@@ -4,6 +4,9 @@ import http from "../../utils/axios";
 import plans from "./plans"
 import colors from "../../colors"
 
+import Loan from "../../public/svg/loan.svg";
+
+
 export default function Result({data, handleChange, ...props}) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [saved, setSaved] = useState(false);
@@ -138,8 +141,10 @@ export default function Result({data, handleChange, ...props}) {
                                                 style={{background: support.color}}
                                             >
                                                 <Grid>
-                                                    <Grid.Column tablet={15} computer={15}
-                                                                 mobile={14}>{plan.title}</Grid.Column>
+                                                    <Grid.Column tablet={15} computer={15} mobile={14}>
+                                                        {plan.isLoan && <Loan />}
+                                                        {plan.title}
+                                                    </Grid.Column>
                                                     <Grid.Column tablet={1} computer={1} mobile={2}>
                                                         <Icon name={activeIndex === key ? 'angle up' : 'angle down'}
                                                               size='large' position="right"/>
@@ -215,6 +220,13 @@ h2.ui.header {
     font-weight:700;
     color:white;
     margin-bottom:6px;
+}
+
+.ui.accordion .main-title svg {
+    max-height:30px;
+    width:40px;
+    margin:-10px 10px -10px -10px;
+    fill:#FFF;
 }
 .ui.accordion .content {
     padding:20px 20px!important;
