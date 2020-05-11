@@ -1,8 +1,10 @@
+import React, {useEffect} from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import {initGA, logPageView} from '../utils/ga'
 
-import React from 'react'
+
 import {
     Container,
     Dropdown,
@@ -16,6 +18,15 @@ import {i18n, withTranslation} from '../i18n'
 import colors from '../colors';
 
 const Layout = ({t, ...props}) => {
+    useEffect(() => {
+        if (!window.GA_INITIALIZED) {
+            initGA();
+            window.GA_INITIALIZED = true;
+        }
+        logPageView();
+    });
+
+
     return (
         <>
             <Head>
