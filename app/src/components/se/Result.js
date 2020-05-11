@@ -67,7 +67,8 @@ export default function Result({data, handleChange, ...props}) {
             </div>
 
             <Message>
-                Detta är en guide för hjälpa företagare att hitta rätt i krisen, vad exakta villkor blir måste alltid ses hos ansvarig myndighet. Projektet drivs ideellt och är ingen rådgivning
+                Detta är en guide för hjälpa företagare att hitta rätt i krisen, vad exakta villkor blir måste alltid ses hos ansvarig myndighet.
+                Projektet drivs ideellt och är ingen rådgivning. Ser du något fel? <a href="mailto:dan@bemaze.se">Skicka ett mail till oss här</a>
             </Message>
 
             <Message positive>
@@ -99,20 +100,20 @@ export default function Result({data, handleChange, ...props}) {
 
             {[
                 {
-                    title: 'Stöd du kan få',
+                    title: 'Stöd företaget sannolikt är berättigat till',
                     icon: 'check circle',
                     eligibleKey: 1,
                     iconColor: "green",
                     color: colors.dropdownGreen
                 },
                 {
-                    title: 'Stöd du kanske kan få',
+                    title: 'Stöd företaget möjligen kan få',
                     icon: 'question circle',
                     eligibleKey: 2,
                     iconColor: "yellow",
                     color: colors.dropdownYellow
                 }, {
-                    title: 'Stöd du inte kan få',
+                    title: 'Stöd företaget sannolikt inte kan få',
                     icon: 'exclamation triangle',
                     eligibleKey: 3,
                     iconColor: "red",

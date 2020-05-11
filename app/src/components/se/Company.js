@@ -5,8 +5,7 @@ import BooleanRadio from "../BooleanRadio";
 export default function Company({data, handleChange, ...props}) {
     const companyOptions = [
         {key: 'ef', value: 'ef', text: props.t('Sole Proprietor (Enskild Firma)')},
-        {key: 'ab', value: 'ab', text: props.t('Limited Company (Aktiebolag)')},
-        {key: 'hb', value: 'hb', text: props.t('Trade Company (Handelsbolag)')},
+        {key: 'ab', value: 'ab', text: props.t('Limited Company (Aktiebolag)')}
     ];
 
     return (
@@ -27,7 +26,7 @@ export default function Company({data, handleChange, ...props}) {
             {data.company_type == 'ab' &&
             <>
                 <BooleanRadio
-                    label={props.t('Gjorde du vinst år 2019?')}
+                    label={props.t('Gjorde företaget vinst 2019?')}
                     data={data}
                     name='made_profit_2019'
                     handleChange={handleChange}

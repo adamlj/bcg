@@ -779,9 +779,7 @@ const plans = [
         title: 'Anstånd moms',
         description: <AnstandMoms/>,
         isEligible: (data) => {
-            if (!data.insolvent && data.company_type == 'ef') {
-                return 2;
-            } else if (!data.insolvent) {
+            if (!data.insolvent) {
                 return 1;
             } else {
                 return 3;

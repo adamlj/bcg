@@ -22,7 +22,7 @@ export default function Rent({data, handleChange, ...props}) {
             </Form.Field>
 
             <BooleanRadio
-                label={props.t('Bedriver företaget verksamhet inom hotell, restaurang, butik eller snarlik verksamhet?')}
+                label={props.t('Bedriver företaget verksamhet inom hotell, restaurang, butik, frisör, kroppsvård eller snarlik verksamhet?')}
                 data={data}
                 name='exposed_business'
                 handleChange={handleChange}
